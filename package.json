@@ -11,6 +11,11 @@
         "format:fix": "prettier --write --ignore-path .gitignore ."
     },
     "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.12.0",
+        "@typescript-eslint/parser": "^6.12.0",
+        "eslint-plugin-import": "^2.29.0",
+        "eslint-plugin-jsx-a11y": "^6.8.0",
+        "eslint-plugin-react": "^7.33.2",
         "next": "14.0.3",
         "react": "^18",
         "react-dom": "^18"
@@ -20,7 +25,7 @@
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "autoprefixer": "^10.4.16",
-        "eslint": "^8",
+        "eslint": "^8.54.0",
         "eslint-config-next": "14.0.3",
         "eslint-config-prettier": "^9.0.0",
         "postcss": "^8.4.31",
