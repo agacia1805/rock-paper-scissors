@@ -8,7 +8,7 @@ interface Props {
   className?: string;
 }
 
-export const Button = ({disabled, onClick, name, label, className}: Props) => {
+export const PlayOption = ({disabled, onClick, name, label, className}: Props) => {
    return (
          <button
             className={`p-8 cursor-pointer rounded-full border-8 relative border-dotted hover:scale-110 border-pink-200 ${className || ""}`}
