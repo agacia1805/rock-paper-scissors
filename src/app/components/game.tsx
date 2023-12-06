@@ -4,6 +4,8 @@ import React, {useState, useEffect, useMemo} from "react";
 import {PlayOption} from './playOption';
 import {GamePlayed} from './gamePlayed';
 import { motion } from 'framer-motion';
+import useLocalStorage from '../hooks/useLocalStorage';
+
 
 type playOptions = 'rock' | 'paper' | 'scissors';
 
@@ -12,8 +14,7 @@ export const Game = () => {
     const [computerChoice, setComputerChoice] = useState<playOptions | null>(null);
     const [gameResult, setGameResult] = useState<'You won' | 'You lost' | 'Draw' | null>(null);
     const [isUserPlaying, setIsUserPlaying] = useState<boolean>(false);
-    const [userScore, setUserScore] = useState<number>(0);
-    const [computerScore, setComputerScore] = useState<number>(0);
+    const [score, setScore] = useLocalStorage('score', 0);
 
     const playOptions: playOptions[] = ["rock", "paper", "scissors"];
 
@@ -29,10 +30,10 @@ export const Game = () => {
             case "rock":
                 if(computerChoice === "paper") {
                     setGameResult('You lost');
-                    setComputerScore((prevScore) => prevScore + 1);
+                    setScore((prevScore) => prevScore - 1);
                 } else if (computerChoice === "scissors") {
                     setGameResult('You won');
-                    setUserScore((prevScore) => prevScore + 1);
+                    setScore((prevScore) => prevScore + 1);
                 } else {
                     setGameResult('Draw');
                 }
@@ -40,10 +41,10 @@ export const Game = () => {
             case "paper":
                 if(computerChoice === "scissors") {
                     setGameResult('You lost');
-                    setComputerScore((prevScore) => prevScore + 1);
+                    setScore((prevScore) => prevScore - 1);
                 } else if (computerChoice === "rock") {
                     setGameResult('You won');
-                    setUserScore((prevScore) => prevScore + 1);
+                    setScore((prevScore) => prevScore + 1);
                 } else {
                     setGameResult('Draw');
                 }
@@ -51,10 +52,10 @@ export const Game = () => {
             case "scissors":
                 if(computerChoice === "rock") {
                     setGameResult('You lost');
-                    setComputerScore((prevScore) => prevScore + 1);
+                    setScore((prevScore) => prevScore - 1);
                 } else if (computerChoice === "paper") {
                     setGameResult('You won');
-                    setUserScore((prevScore) => prevScore + 1);
+                    setScore((prevScore) => prevScore + 1);
                 } else {
                     setGameResult('Draw');
                 }
@@ -92,7 +93,10 @@ export const Game = () => {
    return (
          <div className="grid grid-rows-2 place-items-center gap-10 md:gap-32">
             { userChoice ?
+            <>
                 <GamePlayed userChoice={userChoice} computerChoice={computerChoice} gameResult={gameResult} onClick={() => resetGame()}/>
+                {score}
+                </>
                 :
                 (
                 <>
