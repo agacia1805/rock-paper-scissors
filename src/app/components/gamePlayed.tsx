@@ -28,14 +28,14 @@ export const GamePlayed = ({userChoice, computerChoice, gameResult, onClick}: Pr
             <div className="flex flex-col gap-8 align-center justify-center">
                 <p className="font-bold text-xl md:text-3xl text-center">YOU</p>
                 <div className="flex align-center justify-center">
-                    <PlayOption disabled={true} name={userChoice} className="disabled:scale-100 disabled:cursor-default flex-shrink-0 flex-grow-0">{userChoice}</PlayOption>
+                    <PlayOption disabled={true} name={userChoice} className="disabled:scale-100 disabled:cursor-default flex-shrink-0 flex-grow-0" />
                 </div>
             </div>
             <div className="flex flex-col gap-8 align-center justify-center">
                  <p className="font-bold text-xl md:text-3xl text-center">HOUSE</p>
                  <div className="flex align-center justify-center">
                  {computerChoice ?
-                      <PlayOption disabled={true} name={computerChoice} className="disabled:scale-100 disabled:cursor-default flex-shrink-0 flex-grow-0">{computerChoice}</PlayOption>
+                      <PlayOption disabled={true} name={computerChoice} className="disabled:scale-100 disabled:cursor-default flex-shrink-0 flex-grow-0" />
                  :
                       <Loader />
                  }
