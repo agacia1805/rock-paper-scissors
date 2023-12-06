@@ -1,7 +1,6 @@
 "use client";
 
 import React, {useState, useEffect, useMemo} from "react";
-import  useLocalStorage from '../hooks/useLocalStorage';
 import {PlayOption} from './playOption';
 import {GamePlayed} from './gamePlayed';
 import { motion } from 'framer-motion';
