@@ -1,10 +1,14 @@
 import Image from 'next/image'
 import {Game} from './components/game';
+// import {Footer} from './components/footer';
+import {Header} from './components/header';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 bg-blue-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 ">
+    <main className="flex min-h-screen flex-col items-center px-4 py-12 bg-blue-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 gap-32">
+        <Header/>
         <Game />
+
     </main>
   )
 }
