@@ -5,3 +5,5 @@ export {Header} from "./header";
 export {GameResult} from "./gameResult";
 export {Loader} from "./loader";
 export {GamePlayed} from "./gamePlayed";
+export {Score} from "./score";
+export {ScoreProvider} from "./scoreProvider";
