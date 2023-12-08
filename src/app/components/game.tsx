@@ -2,10 +2,12 @@
 
 import React, {useState, useEffect, useMemo} from "react";
 import {PlayOption} from './playOption';
-import {GamePlayed} from './gamePlayed';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { useScore } from './scoreProvider';
+
+const GamePlayed = dynamic(() => import('./gamePlayed').then((mod) => mod.GamePlayed), { ssr: true });
 
 type playOptions = 'rock' | 'paper' | 'scissors';
 
