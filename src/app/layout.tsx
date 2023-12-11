@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Rock Paper Scissors Game',
-  description: 'Created by Pinehead Coder',
+  description: 'App created by Pinehead Coder',
 }
 
 export default function RootLayout({
