@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { createContext, useContext, ReactNode } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
@@ -13,11 +13,15 @@ const ScoreContext = createContext<ScoreContextType>({
   setScore: () => {},
 });
 
-export const ScoreProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const ScoreProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [score, setScore] = useLocalStorage<number>('score', 0);
 
   const updateScore = (newValue: number | ((val: number) => number)) => {
-      setScore(prevScore => (typeof newValue === 'function' ? newValue(prevScore) : newValue));
+    setScore((prevScore) =>
+      typeof newValue === 'function' ? newValue(prevScore) : newValue
+    );
   };
 
   return (
@@ -28,9 +32,9 @@ export const ScoreProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 };
 
 export const useScore = () => {
-    const context = useContext(ScoreContext);
-    if (!context) {
-        throw new Error('useScore must be used within a ScoreProvider');
-    }
-    return context;
+  const context = useContext(ScoreContext);
+  if (!context) {
+    throw new Error('useScore must be used within a ScoreProvider');
+  }
+  return context;
 };

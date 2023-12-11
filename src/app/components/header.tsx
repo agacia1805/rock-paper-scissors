@@ -1,16 +1,16 @@
 // "use client";
 
-import {Score} from './score';
+import { Score } from './score';
 
 export const Header = () => {
-   return (
-         <header className="flex p-6 max-w-2xl w-full rounded-lg border glitter-border relative justify-between">
-            <h1 className="flex flex-col leading-tight font-extrabold text-2xl">
-                <span>ROCK</span>
-                <span>PAPER</span>
-                <span>SCISSORS</span>
-            </h1>
-            <Score />
-         </header>
+  return (
+    <header className='glitter-border relative flex w-full max-w-2xl justify-between rounded-lg border p-6'>
+      <h1 className='flex flex-col text-2xl font-extrabold leading-tight'>
+        <span>ROCK</span>
+        <span>PAPER</span>
+        <span>SCISSORS</span>
+      </h1>
+      <Score />
+    </header>
   );
 };

@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import {Game} from './components/game';
+import Image from 'next/image';
+import { Game } from './components/game';
 // import {Footer} from './components/footer';
-import {Header} from './components/header';
+import { Header } from './components/header';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 pt-12 pb-4 bg-blue-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 gap-32">
-        <Header/>
-        <Game />
+    <main className='flex min-h-screen flex-col items-center gap-32 bg-blue-600 bg-opacity-10 bg-clip-padding px-4 pb-4 pt-12 backdrop-blur-md backdrop-filter'>
+      <Header />
+      <Game />
     </main>
-  )
+  );
 }

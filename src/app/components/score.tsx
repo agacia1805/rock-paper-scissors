@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import {useEffect} from "react";
+import { useEffect } from 'react';
 import { useScore } from './scoreProvider';
 
 export const Score = () => {
-    const { score } = useScore();
+  const { score } = useScore();
 
-   return (
-       <div className="border glitter-border rounded-lg px-4 py-2 flex flex-col justify-center items-center bg-pink-200 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10">
-           <p className="font-semibold text-xl">Score</p>
-           <p className="font-extrabold text-2xl">{score}</p>
-       </div>
+  return (
+    <div className='glitter-border flex flex-col items-center justify-center rounded-lg border bg-pink-200 bg-opacity-10 bg-clip-padding px-4 py-2 backdrop-blur-md backdrop-filter'>
+      <p className='text-xl font-semibold'>Score</p>
+      <p className='text-2xl font-extrabold'>{score}</p>
+    </div>
   );
 };
