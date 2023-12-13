@@ -24,6 +24,7 @@ export const PlayOption = ({ disabled, onClick, name, className }: Props) => {
         width='80'
         height='80'
         className='h-12 w-12 md:h-20 md:w-20'
+        priority={true}
       />
     </button>
   );
